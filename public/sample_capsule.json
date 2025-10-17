@@ -1,0 +1,46 @@
+{
+  "schema": "pocket-classroom/v1",
+  "id": "cap_generated",
+  "meta": {
+    "title": "Intro to Web Basics",
+    "subject": "Web",
+    "level": "Beginner",
+    "desc": "HTML, CSS, JS fundamentals.",
+    "createdAt": "2023-09-22T10:00:00Z",
+    "createdBy": "admin"
+  },
+  "notes": [
+    "HTML structures content",
+    "CSS styles it"
+  ],
+  "flashcards": [
+    {
+      "front": "HTML",
+      "back": "Markup language"
+    },
+    {
+      "front": "CSS",
+      "back": "Cascading Style Sheets"
+    },
+    {
+      "front": "JavaScript",
+      "back": "Adds interactivity to web pages"
+    }
+  ],
+  "quiz": {
+    "q": "Which tag creates a hyperlink?",
+    "choices": ["<div>", "<a>", "<p>"],
+    "answerIndex": 1,
+    "explain": "<a href='...'> anchors a hyperlink."
+  },
+  "resources": [
+    {
+      "label": "MDN Web Docs",
+      "url": "https://developer.mozilla.org/"
+    },
+    {
+      "label": "W3Schools HTML Guide",
+      "url": "https://www.w3schools.com/html/"
+    }
+  ]
+}

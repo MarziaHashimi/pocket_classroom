@@ -1,0 +1,256 @@
+:root{
+  --bg:#0b0f12;
+  --card:#0f1720;
+  --accent1-start:#2dd4bf;
+  --accent1-end:#06b6d4;
+
+}
+
+/* Page basics */
+body{
+  background: var(--bg);
+  color: #e6eef6;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Navbar */
+.navbar.bg-gradient {
+  background: linear-gradient(90deg, #06243b 0%, #08344f 100%);
+}
+
+/* ===== Theme Variables ===== */
+:root {
+  --bg-color: #e6e5e5;
+  --text-color: #121212;
+  --card-bg: #f9f7f7;
+  --btn-bg: #e0e0e0;
+  --btn-text: #000000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --btn-bg: #2c2c2c;
+  --btn-text: #ffffff;
+}
+
+/* ===== Apply Variables ===== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card, .modal-content, .flashcard, .tab-content, .navbar {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-bg);
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Optional: Adjust input fields */
+input, textarea, select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--btn-bg);
+}
+
+/* Card surfaces */
+.card {
+  background: var(--card);
+  border: 0;
+}
+
+/* Flashcard container ready */
+.fc-outer { perspective: 1000px; }
+.fc-inner {
+  min-width: 260px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  backface-visibility: hidden;
+  transition: transform .5s;
+  transform-style: preserve-3d;
+}
+.fc-inner.flipped { transform: rotateY(180deg); }
+.flashcard-face { position: absolute; backface-visibility: hidden; padding: 1rem; }
+
+/* small helpers */
+.badge-level { background: rgba(255,255,255,0.06); color: #e5f6f9; }
+.text-muted { color: #7e8083 !important; }
+
+/* Focus */
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid rgba(6,182,212,0.12);
+}
+
+/* Responsive tweaks */
+@media (max-width:576px) {
+  .fc-inner { min-width: 200px; }
+}
+
+.quiz-block {
+  background: rgba(255, 255, 255, 0.05);
+}
+.flashcard-row input {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+/* Flashcard flip effect */
+.flashcard {
+  width: 100%;
+  height: 200px;
+  perspective: 800px;
+  cursor: pointer;
+  position: relative;
+}
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: white;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  padding: 1rem;
+  transition: transform 0.6s;
+}
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+.flashcard.flipped .front {
+  transform: rotateY(180deg);
+}
+.flashcard.flipped .back {
+  transform: rotateY(360deg);
+}
+
+/* Header */
+header h1 {
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* ---------- Splash Screen ---------- */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#splash-progress {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  height: 1rem;
+  transition: width 0.3s ease;
+}
+
+body.loaded {
+  overflow: auto;
+  background-color: #0b0c10;
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+ 
+/* new try */
+/* ================================
+   3D Flip Flashcard Animation
+================================== */
+.flashcard {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  position: relative;
+  cursor: pointer;
+  margin: auto;
+}
+
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 1.5rem;
+  transition: transform 0.6s ease;
+}
+
+.flashcard .front {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: #fff;
+  transform: rotateY(0deg);
+}
+
+.flashcard .back {
+  background: linear-gradient(135deg, #20c997, #198754);
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .front {
+  transform: rotateY(-180deg);
+}
+
+.flashcard.flipped .back {
+  transform: rotateY(0deg);
+}
+#flipHint {
+  font-size: 0.9rem;
+  color: #d3d1d1 !important ;
+}
+
+[data-theme="light"] #navmenu *
+ {
+  color: #000 !important;
+}
+
+/* Make hamburger menu icon black in light mode */
+[data-theme="light"] .navbar-toggler-icon {
+  filter: invert(1) brightness(0); 
+}
+
+/*ensure border stays visible in light mode */
+[data-theme="light"] .navbar-toggler {
+  border-color: #000 !important;
+}
